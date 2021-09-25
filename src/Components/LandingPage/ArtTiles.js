@@ -16,6 +16,10 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import toast, { Toaster } from 'react-hot-toast';
+import FilterAltIcon from '@material-ui/icons/FilterList';
+import CategoryFilter from './CategoryFilter';
+import Popover from '@material-ui/core/Popover'
+
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -67,13 +71,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 
 export default function ArtTiles() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   //Only on first render
   useEffect(() => {
@@ -89,146 +94,172 @@ export default function ArtTiles() {
   };
 
   const notifyWelcome = () => {
-    toast.success("Nirvana welcomes you !");
+    toast.success("NEAXT welcomes you !");
   };
+
+  const openFilter = (event) => {
+    setAnchorEl(event.currentTarget);
+
+  }
+
+  const closeFilter = () => {
+    setAnchorEl(null)
+  }
+
 
   return (
     <React.Fragment>
       <CssBaseline />
-          <main>
-              <Typography variant="h5" className={classes.divHeading}>
-                <b>Hall of Frames!</b>
-              </Typography>
-              <br />
-              <Grid container spacing={4}>
-                {featuredPosts.map((card) => (
-                  <Grid item key={card.title} xs={12} sm={6} md={4}>
-                    <Card className={classes.card}>
-                      <CardMedia
-                        className={classes.cardMedia}
-                        image={card.image}
-                        title={card.title}
-                      />
-                      <CardContent className={classes.cardContent}>
-                        <Typography gutterBottom variant="h6" className={classes.subHeading}>
-                          {card.title}
-                        </Typography>
-                        <Typography align="center" variant="body1" className={classes.desc} gutterBottom>
-                          {card.description}
-                        </Typography>
-                        <CardActions>
-                          <Button
-                            variant="outlined"
-                            size="small"
-                            color="primary"
-                            align="center"
-                            fullWidth
-                            onClick={() => { localStorage.setItem("f_title", card.title); localStorage.setItem("f_readmore", card.readmore); localStorage.setItem("f_image", card.image); handleClickOpen(); 
-                            // speak({ text: card.readmore,rate : 0.8})
-                         }}
-                          >
-                          Take me to the House
-                      </Button>
-                        </CardActions>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
-              <br />
-           
-              <br />
-              <Typography variant="h5" className={classes.divHeading}>
-                <b>Digitally Enabling Artists</b>
-              </Typography>
-              <Typography variant="body1" className={classes.desc}>
-              Personalised Recommendation for the Art Admire & Collector base
-            </Typography>
+      <main>
+        <Typography variant="h5" className={classes.divHeading}>
+          <b>Hall of Frames!</b>
+        </Typography>
+        <div style={{ float: 'right' }}>
+          <FilterAltIcon onClick={openFilter} />
+          <Popover
+            id={Boolean(anchorEl) ? 'simple-popover' : undefined}
+            open={Boolean(anchorEl)}
+            anchorEl={anchorEl}
+            onClose={closeFilter}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+          >
+            <CategoryFilter/>
+          </Popover>
+        </div>
+        <Grid container spacing={4}>
+          {featuredPosts.map((card) => (
+            <Grid item key={card.title} xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={card.image}
+                  title={card.title}
+                  style={{filter: 'blur(2px)'}}
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h6" className={classes.subHeading}>
+                    {card.title}
+                  </Typography>
+                  <Typography align="center" variant="body1" className={classes.desc} gutterBottom>
+                    {card.description}
+                  </Typography>
+                  <CardActions>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      color="primary"
+                      align="center"
+                      fullWidth
+                      onClick={() => {
+                        localStorage.setItem("f_title", card.title); localStorage.setItem("f_readmore", card.readmore); localStorage.setItem("f_image", card.image); handleClickOpen();
+                        // speak({ text: card.readmore,rate : 0.8})
+                      }}
+                    >
+                      Take me to the House
+                    </Button>
+                  </CardActions>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+        <br />
 
-              <Dialog
-                open={open}
-                TransitionComponent={Transition}
-                keepMounted
-                maxWidth="lg"
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-slide-title"
-                aria-describedby="alert-dialog-slide-description"
-              >
-                <DialogTitle id="alert-dialog-slide-title">{localStorage.getItem("f_title")}</DialogTitle>
-                <DialogContent>
-                  <DialogContentText id="alert-dialog-slide-description">
+        <br />
+        <Typography variant="h5" className={classes.divHeading}>
+          <b>Digitally Enabling Artists</b>
+        </Typography>
+        <Typography variant="body1" className={classes.desc}>
+          Personalised Recommendation for the Art Admire & Collector base
+        </Typography>
 
-                    {/* {localStorage.getItem("f_readmore")}
+        <Dialog
+          open={open}
+          TransitionComponent={Transition}
+          keepMounted
+          maxWidth="lg"
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-slide-title"
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle id="alert-dialog-slide-title">{localStorage.getItem("f_title")}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+
+              {/* {localStorage.getItem("f_readmore")}
                     <br /> <br /> */}
-                    <center><img alt="fitness tip" src={localStorage.getItem("f_image")} /></center>
+              <center><img alt="fitness tip" src={localStorage.getItem("f_image")} /></center>
 
-                  </DialogContentText>
+            </DialogContentText>
 
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleClose} color="primary">
-                    Done
-                  </Button>
-                </DialogActions>
-              </Dialog>
-          </main>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Done
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </main>
     </React.Fragment>
 
 
   );
 }
 
-  const featuredPosts = [
-    {
-      title: 'Mind Changing Fusion',
-      description:
-      'Details to be added',
-      image: 'https://easttennessean.com/wp-content/uploads/2018/04/art.jpg',
-      imageText: 'Artists name',
-      readmore: "While sitting down, stretch your arms out at your sides and press your shoulder blades together. With your palms facing down, circle your arms forwards around 20 times. Then, face your palms upwards and circle your arms backwards around 20 times. After this, circle your wrists 20 times in each direction."
-    },
-    {
-      title: 'East Tennessean',
-      description:
-      'Details to be added',
-      image: 'https://i.pinimg.com/originals/fe/41/5f/fe415f65c3641c1a67b000aa7a4ddb36.jpg',
-      imageText: 'Artists name',
-      readmore: "Stand up and hold your hands together behind your back, expanding your chest. Pull your shoulder blades as close together as possible and hold the pose for 30 seconds."
-    },
-    {
-      title: 'The Met Collection',
-      description:
-      'Details to be added',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfma94c7uHhUs8y9AmLZ_CPZx487uvBVSIWaaIy6414RaXzkZ&s',
-      imageText: 'Artists name',
-      readmore: "Under your desk, raise both legs at once upwards, and slowly lower them down. Repeat few times."
-    },
-  
-    {
-      title: 'Visual Communication',
-      description:
-      'Details to be added',
-      image: 'https://worlduniversityofdesign.ac.in/assets/images/bgs/school-of-visual-arts-banner.jpg',
-      imageText: 'Artists name',
-      readmore: "Holding a water bottle, or an object of a similar weight, let your arms fall straight by your side and then slowly bend them upwards. Repeat this action multiple times on both arms."
-    },
-  
-    {
-      title: 'Japanese Waves',
-      description:
-      'Details to be added',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZmMEAhMzRNRXWU1lO34XQxjGzSWlprB2XyFHTFuxYN-SFcA&s',
-      imageText: 'Artists name',
-      readmore: "Sitting at your desk, cover your left knee with your right hand and look over your left shoulder. Hold this pose for 30 seconds to stretch your back, remembering to breathe. Repeat the action on the opposite side."
-    },
-    {
-      title: 'Art for Home',
-      description:
-        'Details to be added',
-      image: 'https://www.homestratosphere.com/wp-content/uploads/2019/07/Cubism-art-833x1024.jpg',
-      imageText: 'Artists name',
-      readmore: "Using a non-moving chair perch on the edge of the seat and slowly stand up with your arms by your sides. Lower yourself until you gently touch the chair and then stand back up, remembering to breathe. Repeat. For extra points, hover just over the chair for 30 seconds."
-    },
-  
-  
-  ];
+const featuredPosts = [
+  {
+    title: 'Salutary Failures, Kunsthalle Basel, 2020',
+    description:
+      'Zurich Art Gallery',
+    image: 'https://raphaelhefti.com/kirby/media/pages/works/kunsthalle-basel-salutary-failures/6f91a2fa3c-1631633884/rhefti-khbasel-2020-12-dsc00310-canonical-x200.jpg',
+    imageText: 'Artists name',
+    readmore: "While sitting down, stretch your arms out at your sides and press your shoulder blades together. With your palms facing down, circle your arms forwards around 20 times. Then, face your palms upwards and circle your arms backwards around 20 times. After this, circle your wrists 20 times in each direction."
+  },
+  {
+    title: 'Salutary Failures, Kunsthalle Basel, 2020',
+    description:
+    'Culture Art Gallery',
+    image: 'https://raphaelhefti.com/kirby/media/pages/works/kunsthalle-basel-salutary-failures/ee4f3a8695-1631633896/rhefti_khbasel_room2_2020-10_gm_6766_canonical.jpeg',
+    imageText: 'Artists name',
+    readmore: "Stand up and hold your hands together behind your back, expanding your chest. Pull your shoulder blades as close together as possible and hold the pose for 30 seconds."
+  },
+  {
+    title: 'Sculpture Projects Ping Yao, 2018',
+    description:
+    'Hayward Art Gallery',
+    image: 'https://raphaelhefti.com/kirby/media/pages/works/sculpture-projects-ping-yao-2018/986fcd2bbf-1631633957/286ed488c8281cc8a7ba01.jpg',
+    imageText: 'Artists name',
+    readmore: "Under your desk, raise both legs at once upwards, and slowly lower them down. Repeat few times."
+  },
+
+  {
+    title: 'Visual Communication',
+    description:
+    'The National Gallery',
+    image: 'https://worlduniversityofdesign.ac.in/assets/images/bgs/school-of-visual-arts-banner.jpg',
+    imageText: 'Artists name',
+    readmore: "Holding a water bottle, or an object of a similar weight, let your arms fall straight by your side and then slowly bend them upwards. Repeat this action multiple times on both arms."
+  },
+
+  {
+    title: 'Japanese Waves',
+    description:
+    'Tate Britain',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZmMEAhMzRNRXWU1lO34XQxjGzSWlprB2XyFHTFuxYN-SFcA&s',
+    imageText: 'Artists name',
+    readmore: "Sitting at your desk, cover your left knee with your right hand and look over your left shoulder. Hold this pose for 30 seconds to stretch your back, remembering to breathe. Repeat the action on the opposite side."
+  },
+  {
+    title: 'Art for Home',
+    description:
+    'Tate Modern',
+    image: 'https://www.homestratosphere.com/wp-content/uploads/2019/07/Cubism-art-833x1024.jpg',
+    imageText: 'Artists name',
+    readmore: "Using a non-moving chair perch on the edge of the seat and slowly stand up with your arms by your sides. Lower yourself until you gently touch the chair and then stand back up, remembering to breathe. Repeat. For extra points, hover just over the chair for 30 seconds."
+  },
+
+
+];

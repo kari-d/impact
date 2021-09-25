@@ -89,7 +89,7 @@ export default function ArtistsTiles() {
   };
 
   const notifyWelcome = () => {
-    toast.success("Nirvana welcomes you !");
+    toast.success("NEAXT welcomes you !");
   };
 
   return (

@@ -89,7 +89,7 @@ export default function ContestTiles() {
   };
 
   const notifyWelcome = () => {
-    toast.success("Nirvana welcomes you !");
+    toast.success("NEAXT welcomes you !");
   };
 
   return (
@@ -155,7 +155,7 @@ export default function ContestTiles() {
                 <b>Digitally Enabling Artists</b>
               </Typography>
               <Typography variant="body1" className={classes.desc}>
-              Participate or Host your contest on Nirvana Challenge
+              Participate or Host your contest on NEAXT Challenge
             </Typography>
 
               <Dialog
@@ -195,7 +195,7 @@ export default function ContestTiles() {
     {
       title: 'Instagram Art Contest',
       description:
-      'Nirvana & Instagram coming together to launch Art Contest for theme Climate Change',
+      'NEAXT & Instagram coming together to launch Art Contest for theme Climate Change',
       image: 'https://www.famousmonsters.com/wp-content/uploads/2018/09/artcontest.jpg',
       imageText: 'Artists name',
       readmore: "While sitting down, stretch your arms out at your sides and press your shoulder blades together. With your palms facing down, circle your arms forwards around 20 times. Then, face your palms upwards and circle your arms backwards around 20 times. After this, circle your wrists 20 times in each direction."
@@ -203,7 +203,7 @@ export default function ContestTiles() {
     {
       title: 'Paris Art Challenge',
       description:
-      'Paris Art Challenge in collaboration with Nirvana Art Admirers for open theme contest',
+      'Paris Art Challenge in collaboration with NEAXT Art Admirers for open theme contest',
       image: 'https://www.centre-unesco-troyes.org/wp-content/uploads/2019/04/logo-Centre-UNESCO.jpg',
       imageText: 'Artists name',
       readmore: "Stand up and hold your hands together behind your back, expanding your chest. Pull your shoulder blades as close together as possible and hold the pose for 30 seconds."

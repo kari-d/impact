@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
+    //filter: 'blur(10px)'
   },
   cardContent: {
     flexGrow: 1,
@@ -135,20 +136,18 @@ export default function Home() {
       <header className="App-header">
 
         <Container maxWidth="lg">
-          <Header title="Nirvana - Digitally Enabling Artists" />
+          <Header title="NEAXT" />
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Container className={classes.cardGrid} maxWidth="lg">
-               {/* <Typography variant="subtitle" align="center" className={classes.divHeading}>
-                  <b>👋Find your Art👋</b>
+               <Typography variant="subtitle" align="center" className={classes.divHeading}>
+                  <b>👋NEAXT - New Generation Enabling Art Technology👋</b>
                 </Typography>
-                 */}
-              
-              
+
                 <ArtTiles/>
-                <br/>
-                <hr/>
-                <br/>
+             
+
+                
               <Grid container spacing={3}>
               <Grid item xs={6} className={classes.leaderBoardParent}>
                   <Typography variant="subtitle1" align="center" className={classes.divHeading}>

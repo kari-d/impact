@@ -32,7 +32,7 @@ export default function Contest() {
 const mainFeaturedPost = {
   title: 'Contest',
   description:
-    "Calling all Artists across globe to showcase their talent & artwork on Nirvana all time on Global Contests & Challenges!",
+    "Calling all Artists across globe to showcase their talent & artwork on NEAXT all time on Global Contests & Challenges!",
   image: 'https://1.bp.blogspot.com/-jVsj5NqhEIU/Xqvorj7fkHI/AAAAAAAABV4/LIr122HzWxsU_n_s40e6_dsdY8U0OyVIQCLcBGAsYHQ/s1600/source.gif',
   imgText: 'Employee Profile',
   linkText: 'Continue reading…',

@@ -154,7 +154,7 @@ export default function LoginPage() {
           </Grid>
           <Box mt={5}>
             <Typography variant="body1" color="textSecondary" align="center">
-              Welcome to Nirvana by CodeBlooded
+              Welcome to NEAXT by CodeBlooded
               </Typography>
           </Box>
         </div>
