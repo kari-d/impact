@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const mainFeaturedPost = {
-  title: 'Nirvana by Code Blooded',
+  title: 'Hall of Frames',
   description:
     "One-stop platform that provides opportunities to artists to reach out to wider audiences. At the same time, it promotes and scouts new artistry talents all across the globe. ",
     image: "https://www.agora-gallery.com/advice/wp-content/uploads/Artist-in-quarantine-1280x720.jpg",

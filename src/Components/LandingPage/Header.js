@@ -15,6 +15,7 @@ const sections = [
   { title: 'Contest', url: '#/home' },
   { title: 'Community Connect', url: '#/home' },
   { title: 'Region & Culture', url: '#/home' },
+  { title: 'Podcast & Quick Shorts', url: '#/home' },
 ];
 
 const useStyles = makeStyles((theme) => ({
