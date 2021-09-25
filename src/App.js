@@ -5,6 +5,7 @@ import LoginPage from './Components/LoginPage/LoginPage';
 import Home from './Components/LandingPage/LandingPage';
 import Artists from './Components/Artists/Artists';
 import Contest from './Components/Contest/Contest';
+import RegionCulture from './Components/RegionCulture/RegionCulture';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/home" component={Home}/>
             <Route exact path="/artists" component={Artists}/>
             <Route exact path="/contest" component={Contest}/>
+            <Route exact path="/region" component={RegionCulture}/>
           </Switch>
       </HashRouter>
       {/* </header> */}

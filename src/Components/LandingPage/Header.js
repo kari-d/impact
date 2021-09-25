@@ -13,8 +13,7 @@ const sections = [
   { title: 'Hall of Frames', url: '#/home' },
   { title: 'Market Place', url: '#/artists' },
   { title: 'Contest', url: '#/contest' },
-  { title: 'Region & Culture', url: '#/home' },
-  { title: 'Podcast & Quick Shorts', url: '#/home' },
+  { title: 'Region & Culture (Podcast & Quick Shorts)', url: '#/region' },
 ];
 
 const useStyles = makeStyles((theme) => ({
