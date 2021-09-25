@@ -13,7 +13,7 @@ export default function Artists() {
       <React.Fragment>
         <CssBaseline />     
          <Container maxWidth="lg">
-          <Header title="Artwork Market Place" />
+          <Header title="Market Place" />
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={2} align="center">

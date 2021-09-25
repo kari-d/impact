@@ -13,7 +13,7 @@ export default function Contest() {
       <React.Fragment>
         <CssBaseline />     
          <Container maxWidth="lg">
-          <Header title="Artwork Market Place" />
+          <Header title="Contest" />
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={2} align="center">

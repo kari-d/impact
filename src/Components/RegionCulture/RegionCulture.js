@@ -13,7 +13,7 @@ export default function RegionCulture() {
       <React.Fragment>
         <CssBaseline />     
          <Container maxWidth="lg">
-          <Header title="Artwork Market Place" />
+          <Header title="Podcasts" />
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={2} align="center">
