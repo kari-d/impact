@@ -3,11 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Header from '../LandingPage/Header';
 import MainFeaturedPost from '../LandingPage/MainFeaturedPost';
-import { Card } from 'antd';
 import Grid from '@material-ui/core/Grid';
 import ContestTiles from './ContestTiles';
-
-const { Meta } = Card;
 
 
 export default function Contest() {
