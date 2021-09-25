@@ -11,9 +11,8 @@ import Link from '@material-ui/core/Link';
 
 const sections = [
   { title: 'Hall of Frames', url: '#/home' },
-  { title: 'Artists', url: '#/home' },
-  { title: 'Contest', url: '#/home' },
-  { title: 'Community Connect', url: '#/home' },
+  { title: 'Market Place', url: '#/artists' },
+  { title: 'Contest', url: '#/contest' },
   { title: 'Region & Culture', url: '#/home' },
   { title: 'Podcast & Quick Shorts', url: '#/home' },
 ];

@@ -3,6 +3,8 @@ import { Route, Switch, HashRouter } from 'react-router-dom';
 import SignUpPage from './Components/SignUpPage/SignUpPage';
 import LoginPage from './Components/LoginPage/LoginPage';
 import Home from './Components/LandingPage/LandingPage';
+import Artists from './Components/Artists/Artists';
+import Contest from './Components/Contest/Contest';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
             <Route exact path="/login" component={LoginPage}/>
             <Route exact path="/signup" component={SignUpPage}/>
             <Route exact path="/home" component={Home}/>
+            <Route exact path="/artists" component={Artists}/>
+            <Route exact path="/contest" component={Contest}/>
           </Switch>
       </HashRouter>
       {/* </header> */}

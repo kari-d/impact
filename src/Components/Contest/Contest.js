@@ -5,12 +5,12 @@ import Header from '../LandingPage/Header';
 import MainFeaturedPost from '../LandingPage/MainFeaturedPost';
 import { Card } from 'antd';
 import Grid from '@material-ui/core/Grid';
-import ArtistsTiles from './ArtistsTiles';
+import ContestTiles from './ContestTiles';
 
 const { Meta } = Card;
 
 
-export default function Artists() {
+export default function Contest() {
    
     return (
       <React.Fragment>
@@ -20,7 +20,7 @@ export default function Artists() {
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={2} align="center">
-              <ArtistsTiles/>
+              <ContestTiles/>
             </Grid>
           </main>
         </Container>
@@ -30,10 +30,10 @@ export default function Artists() {
 }
 
 const mainFeaturedPost = {
-  title: 'Artwork Market Place',
+  title: 'Contest',
   description:
-    "Buy, Sell, Own Shares and much more of Paintings & Digital Art Work everything under one hood and with just one click away",
-  image: 'https://assets0.domestika.org/course-images/000/019/250/19250-big.gif',
+    "Calling all Artists across globe to showcase their talent & artwork on Nirvana all time on Global Contests & Challenges!",
+  image: 'https://1.bp.blogspot.com/-jVsj5NqhEIU/Xqvorj7fkHI/AAAAAAAABV4/LIr122HzWxsU_n_s40e6_dsdY8U0OyVIQCLcBGAsYHQ/s1600/source.gif',
   imgText: 'Employee Profile',
   linkText: 'Continue reading…',
 };
