@@ -18,7 +18,14 @@ import Slide from '@material-ui/core/Slide';
 import toast, { Toaster } from 'react-hot-toast';
 import FilterAltIcon from '@material-ui/icons/FilterList';
 import CategoryFilter from './CategoryFilter';
-import Popover from '@material-ui/core/Popover'
+import Popover from '@material-ui/core/Popover';
+
+import one from '../../Resources/Images/1.jpg'
+import two from '../../Resources/Images/2.jpg'
+import three from '../../Resources/Images/3.jpg'
+import four from '../../Resources/Images/4.jpg'
+import five from '../../Resources/Images/5.jpg'
+import six from '../../Resources/Images/6.jpg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -214,7 +221,7 @@ const featuredPosts = [
     title: 'Salutary Failures, Kunsthalle Basel, 2020',
     description:
       'Zurich Art Gallery',
-    image: 'https://raphaelhefti.com/kirby/media/pages/works/kunsthalle-basel-salutary-failures/6f91a2fa3c-1631633884/rhefti-khbasel-2020-12-dsc00310-canonical-x200.jpg',
+    image: one,
     imageText: 'Artists name',
     readmore: "While sitting down, stretch your arms out at your sides and press your shoulder blades together. With your palms facing down, circle your arms forwards around 20 times. Then, face your palms upwards and circle your arms backwards around 20 times. After this, circle your wrists 20 times in each direction."
   },
@@ -222,7 +229,7 @@ const featuredPosts = [
     title: 'Salutary Failures, Kunsthalle Basel, 2020',
     description:
     'Culture Art Gallery',
-    image: 'https://raphaelhefti.com/kirby/media/pages/works/kunsthalle-basel-salutary-failures/ee4f3a8695-1631633896/rhefti_khbasel_room2_2020-10_gm_6766_canonical.jpeg',
+    image: two,
     imageText: 'Artists name',
     readmore: "Stand up and hold your hands together behind your back, expanding your chest. Pull your shoulder blades as close together as possible and hold the pose for 30 seconds."
   },
@@ -230,7 +237,7 @@ const featuredPosts = [
     title: 'Sculpture Projects Ping Yao, 2018',
     description:
     'Hayward Art Gallery',
-    image: 'https://raphaelhefti.com/kirby/media/pages/works/sculpture-projects-ping-yao-2018/986fcd2bbf-1631633957/286ed488c8281cc8a7ba01.jpg',
+    image: three,
     imageText: 'Artists name',
     readmore: "Under your desk, raise both legs at once upwards, and slowly lower them down. Repeat few times."
   },
@@ -239,7 +246,7 @@ const featuredPosts = [
     title: 'Visual Communication',
     description:
     'The National Gallery',
-    image: 'https://worlduniversityofdesign.ac.in/assets/images/bgs/school-of-visual-arts-banner.jpg',
+    image: four,
     imageText: 'Artists name',
     readmore: "Holding a water bottle, or an object of a similar weight, let your arms fall straight by your side and then slowly bend them upwards. Repeat this action multiple times on both arms."
   },
@@ -248,7 +255,7 @@ const featuredPosts = [
     title: 'Japanese Waves',
     description:
     'Tate Britain',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZmMEAhMzRNRXWU1lO34XQxjGzSWlprB2XyFHTFuxYN-SFcA&s',
+    image: five,
     imageText: 'Artists name',
     readmore: "Sitting at your desk, cover your left knee with your right hand and look over your left shoulder. Hold this pose for 30 seconds to stretch your back, remembering to breathe. Repeat the action on the opposite side."
   },
@@ -256,7 +263,7 @@ const featuredPosts = [
     title: 'Art for Home',
     description:
     'Tate Modern',
-    image: 'https://www.homestratosphere.com/wp-content/uploads/2019/07/Cubism-art-833x1024.jpg',
+    image: six,
     imageText: 'Artists name',
     readmore: "Using a non-moving chair perch on the edge of the seat and slowly stand up with your arms by your sides. Lower yourself until you gently touch the chair and then stand back up, remembering to breathe. Repeat. For extra points, hover just over the chair for 30 seconds."
   },
