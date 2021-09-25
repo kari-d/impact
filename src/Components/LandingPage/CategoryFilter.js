@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-const filters = {Age: ['>18 years', '19 - 25 years'], Category: ['opt1', 'opt2', 'opt3']}
+const filters = {Age: ['>18 years', '19 - 25 years', '<26 years'], Category: ['history', 'religious', 'genre', 'landscape', 'portrait']}
 
 export default function CategoryFilter() {
     return (
